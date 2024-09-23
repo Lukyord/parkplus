@@ -1,0 +1,93 @@
+/*CONTACT MAIN====================*/
+
+/*CONTACT====================*/
+.contact {
+    background-color: var(--color-white);
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.contact .main-content {
+    height: 100%;
+}
+
+.contact .main-content .sc-inner {
+    display: flex;
+    align-items: center;
+    padding-top: var(--spacing-60);
+    padding-bottom: var(--spacing-60);
+}
+
+.contact .main-content .wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact .main-content .wrapper .map {
+    width: 45%;
+    height: auto;
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.contact .main-content .wrapper .map *:is(iframe, img) {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+.contact .main-content .wrapper .map .pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.contact .main-content .wrapper .contact-info {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    grid-gap: var(--spacing-40);
+}
+
+.contact .main-content .contact-info .location-title {
+    margin-bottom: var(--spacing-40);
+}
+
+.contact .main-content .contact-info .address {
+    margin-bottom: var(--spacing-20);
+    border-bottom: var(--border);
+}
+
+.contact .main-content .contact-info .address > address {
+    padding: var(--spacing-20) 0;
+}
+
+.contact .main-content .contact-info .tel-and-email {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact .main-content .contact-info .tel-and-email .item {
+    display: flex;
+    flex-direction: column;
+    grid-gap: var(--spacing-10);
+}
+
+@media (max-width: 991px) {
+    .contact .main-content .sc-inner {
+        padding-top: var(--spacing-40);
+        padding-bottom: var(--spacing-100);
+    }
+
+    .contact .main-content .wrapper {
+        flex-direction: column;
+        grid-gap: var(--spacing-20);
+    }
+
+    .contact .main-content .wrapper *:is(.map, .contact-info) {
+        width: 100%;
+    }
+}

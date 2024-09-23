@@ -263,10 +263,10 @@ form.wpcf7-form.submitting button[type="submit"] {
     position: relative;
     display: flex;
     align-items: center;
-    grid-gap: var(--spacing-16);
+    grid-gap: var(--spacing-10);
     font-weight: var(--font-weight-body);
-    font-size: var(--font-size-body);
-    line-height: var(--line-height-body);
+    font-size: var(--font-size-subtitle1);
+    line-height: var(--line-height-subtitle1);
     color: inherit;
     text-align: center;
 }
@@ -284,25 +284,22 @@ form.wpcf7-form.submitting button[type="submit"] {
     justify-content: center;
     text-align: center;
     width: auto;
-    min-width: var(--button-height);
-    height: var(--button-height);
-    padding: var(--spacing-12);
+    height: auto;
+    padding: var(--spacing-10) var(--spacing-20);
     color: var(--color-black);
     background: var(--color-white);
-    border: var(--border-width) solid var(--border-color);
-    border-radius: var(--radius);
+    border-bottom: var(--border) !important;
+    border-radius: 0;
     overflow: hidden;
+    transition: var(--duration) var(--timing-function);
 }
 .wp-pagenavi > *:hover {
     color: var(--color-theme) !important;
 }
 .wp-pagenavi > *.current {
-    color: var(--color-white) !important;
-    background: var(--color-theme) !important;
     border-color: var(--color-theme) !important;
 }
 .wp-pagenavi > *[class*="postslink"] {
-    order: 1;
     font-size: 0;
     position: relative;
     top: auto;
@@ -310,6 +307,8 @@ form.wpcf7-form.submitting button[type="submit"] {
     left: auto;
     right: auto;
     z-index: 1;
+    border: none !important;
+    padding: 0;
 }
 .wp-pagenavi > .previouspostslink,
 .wp-pagenavi:not(.has-prev) > .nextpostslink {
@@ -318,19 +317,30 @@ form.wpcf7-form.submitting button[type="submit"] {
 .wp-pagenavi > *:is(.previouspostslink, .nextpostslink):before {
     font-family: "iconfont";
     font-weight: normal;
-    font-size: var(--font-size-body);
+    font-size: var(--16px) !important;
 }
 .wp-pagenavi > .previouspostslink:before {
-    content: "\e90d";
+    content: "\e909";
+    margin-right: var(--spacing-64);
 }
 .wp-pagenavi > .nextpostslink:before {
-    content: "\e90e";
+    content: "\e90a";
+    margin-left: var(--spacing-64);
 }
 
 @media (max-width: 575px) {
     .wp-pagenavi {
         --button-height: 50px;
         grid-column-gap: var(--spacing-16);
+    }
+
+    .wp-pagenavi > .previouspostslink:before {
+        content: "\e909";
+        margin-right: 0;
+    }
+    .wp-pagenavi > .nextpostslink:before {
+        content: "\e90a";
+        margin-left: 0;
     }
 }
 

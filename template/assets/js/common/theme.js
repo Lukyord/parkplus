@@ -23,8 +23,9 @@ jQuery(function ($) {
 
 {
     /* <div class="image-banner blurred-media animate fadeIn">
-<div class="matrixZoomOut"></div>
+<div class="matrixZoomOut">
 <img src="./assets/img/design/about1.png" alt="about image 1" loading="lazy">
+</div>
 </div> */
 }
 // BLURRED UNLOADED IMAGES
@@ -37,12 +38,6 @@ jQuery(function ($) {
             if (media.length) {
                 function loaded() {
                     blurredImageDiv.addClass("loaded");
-                    blurredImageDiv
-                        .children()
-                        .first()
-                        .addClass("animate")
-                        .css("visibility", "hidden");
-                    blurredImageDiv.scrollTop(blurredImageDiv.scrollTop() + 1);
                 }
 
                 media.each(function () {
@@ -124,6 +119,7 @@ jQuery(function ($) {
     var lastWidth = $(window).width();
     $(window).resize(function () {
         if ($(window).width() != lastWidth) {
+            lastWidth = $(window).width();
             vdoChangeInit();
         }
     });
@@ -1291,19 +1287,146 @@ jQuery(function ($) {
     }
 });
 
+/* HEADER&FOOTER */
+jQuery(function ($) {
+    //MENU CONTROL
+    $(".header-menu-ctrl > .ctrl").click(function (e) {
+        e.preventDefault();
+        $("html").toggleClass("header-menu-enabled");
+        $("html, body").toggleClass("no-scroll");
+        $(".header-menu-ctrl > .ctrl").toggleClass("active");
+        $(".header-menu .panel-scroll").animate({ scrollTop: 0 });
+    });
+
+    // Function to close the header menu
+    function closeHeaderMenu() {
+        $("html").removeClass("header-menu-enabled");
+        $("html, body").toggleClass("no-scroll");
+        $(".header-menu-ctrl > .ctrl").removeClass("active");
+        $(".header-menu").removeClass("active");
+        setTimeout(function () {
+            $(".header-menu .panel-scroll").animate({ scrollTop: 0 });
+        }, 500);
+    }
+
+    $(".header-menu .link-scroll, .header-menu .panel-overlay").click(
+        function () {
+            closeHeaderMenu();
+        }
+    );
+
+    $(".header-menu").on(
+        "click",
+        ".link-scroll, .panel-overlay, a",
+        function () {
+            closeHeaderMenu();
+        }
+    );
+});
+
+// INPUT UNIT
+jQuery(function ($) {
+    if ($(".input-with-unit").length) {
+        $(".input-with-unit").each(function () {
+            const hiddenValue = $(this).find("#hiddenValue");
+            const unitsValue = $(this).find("#unitsValue");
+            const unit = $(this).find("#unitsValue").data("unit");
+            const input = $(this).find("input");
+
+            function formatNumberWithSeparator(number) {
+                return number.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            function formatInputValue() {
+                let inputVal = input.val().replace(/,/g, "");
+                let formattedVal = formatNumberWithSeparator(inputVal);
+
+                input.val(formattedVal);
+
+                hiddenValue.html(input.val());
+
+                unitsValue.html(input.val().length > 0 ? " " + unit : "");
+            }
+
+            formatInputValue();
+
+            input.on("input", function () {
+                formatInputValue();
+            });
+        });
+    }
+});
+
+// GET OFFSET LEFT
+jQuery(function ($) {
+    if ($("#header .header-nav .header-logo").length) {
+        $("#header .header-nav .header-logo").each(function () {
+            const headerLogo = $(this);
+
+            function setOffset() {
+                const offsetLeft = headerLogo.offset().left;
+                $(":root").css("--offset-left", `${offsetLeft}px`);
+            }
+
+            setOffset();
+
+            onWindowResize(setOffset);
+        });
+    }
+});
+
+// FULL WIDTH SLIDES
+jQuery(function ($) {
+    if ($(".full-width-slides").length) {
+        $(".full-width-slides .swiper").each(function () {
+            const swiperSlides = new Swiper($(this)[0], {
+                effect: "slide",
+                slidesPerView: "auto",
+                speed: 800,
+                watchSlidesProgress: true,
+                watchSlidesVisibility: true,
+                navigation: {
+                    nextEl: ".full-width-slides-swiper-button-next",
+                    prevEl: ".full-width-slides-swiper-button-prev",
+                },
+            });
+        });
+    }
+});
+
+// SCROLL TO SECTION
+$(document).on("click", 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    if ($(this).hasClass("no-scroll-to-section")) {
+        return;
+    }
+
+    const target = $($.attr(this, "href"));
+
+    if (target.length) {
+        $("html, body").animate(
+            {
+                scrollTop: target.offset().top,
+            },
+            500
+        );
+    }
+});
+
 // EFFECT
 
 // ===== LENIS =====
-// const lenis = new Lenis();
+const lenis = new Lenis();
 
-// lenis.on("scroll", (e) => {});
+lenis.on("scroll", (e) => {});
 
-// function raf(time) {
-//   lenis.raf(time);
-//   requestAnimationFrame(raf);
-// }
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
 
-// requestAnimationFrame(raf);
+requestAnimationFrame(raf);
 
 // ===== GSAP =====
 // let panels = gsap.utils.toArray(".gsap-panel");

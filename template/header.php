@@ -45,6 +45,17 @@ $page_index = ($page == basename(dirname($_SERVER['PHP_SELF']), "/") || $page ==
     <link rel="stylesheet" href="<?php echo $root; ?>assets/css/footer.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="<?php echo $root; ?>assets/css/header.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="<?php echo $root; ?>assets/css/index.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/about.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/products.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/product-single.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/services.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/grid-template.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/grid-template-single.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/contact.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/references.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/calculator.css?v=<?php echo time(); ?>">
+
+
     <!-- JS:LIBRARY -->
     <script src="<?php echo $root; ?>assets/js/library/modernizr-custom.js"></script>
     <script src="<?php echo $root; ?>assets/js/library/jquery-3.6.0.min.js"></script>
@@ -62,7 +73,55 @@ $page_index = ($page == basename(dirname($_SERVER['PHP_SELF']), "/") || $page ==
                             } ?>">
         <header id="header">
             <div class="header-nav">
+                <div class="header-logo">
+                    <a href="<?php echo $root; ?>index.php" class="logo">
+                        <img src="<?php echo $root; ?>assets/img/logo.svg" alt="Park Plus logo">
+                    </a>
+                </div>
 
+                <div class="header-menu">
+                    <div class="panel">
+                        <div class="panel-wrap">
+                            <div class="panel-scroll" data-lenis-prevent>
+                                <div class="panel-container">
+                                    <div class="panel-body">
+                                        <ul class="menu">
+                                            <li><a href="<?php echo $root; ?>about.php" class="hover-underline">ABOUT</a></li>
+                                            <li><a href="<?php echo $root; ?>products.php" class="hover-underline">PRODUCTS</a></li>
+                                            <li><a href="<?php echo $root; ?>references.php" class="hover-underline">REFERENCES</a></li>
+                                            <li><a href="<?php echo $root; ?>services.php" class="hover-underline">SERVICES</a></li>
+                                            <li><a href="<?php echo $root; ?>grid-template.php" class="hover-underline">NEWS</a></li>
+                                            <li><a href="<?php echo $root; ?>grid-template.php" class="hover-underline">BLOG</a></li>
+                                            <li><a href="<?php echo $root; ?>contact.php" class="hover-underline">CONTACT</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="panel-footer hidden-device-md">
+                                        <p class="description">
+                                            PARK PLUS IS ABOUT LESS<br>
+                                            FOR MORE
+                                        </p>
+                                        <ul class="links">
+                                            <li><a href="<?php echo $root; ?>page.php" class="hover-underline">PRIVACY</a></li>
+                                            <li><a href="<?php echo $root; ?>page.php" class="hover-underline">TERMS</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="header-cta">
+                    <div class="call-cta">
+                        <a href="tel:+6629998586">
+                            CALL US
+                        </a>
+                    </div>
+                    <div class="header-menu-ctrl hidden-device-md">
+                        <a class="ctrl" href="javascript:;">
+                            <span class="hamburger"><span class="bars">&nbsp;</span></span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </header>

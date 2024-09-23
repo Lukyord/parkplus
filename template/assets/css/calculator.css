@@ -1,0 +1,168 @@
+/*CALCULATOR MAIN====================*/
+
+/*CALCULATOR====================*/
+.sc-calculator .main-content {
+    background-color: var(--color-white);
+}
+
+.sc-calculator .main-content .sc-inner {
+    padding-top: var(--spacing-50);
+    padding-bottom: var(--spacing-100);
+}
+
+.sc-calculator .main-content .calculator-form .fields {
+    display: grid;
+    grid-gap: var(--spacing-24);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+.sc-calculator .main-content .calculator-form .fields .button {
+    width: 100%;
+}
+
+.sc-calculator .main-content .compare-grid {
+    margin-top: var(--spacing-80);
+}
+
+/* TABLE */
+.sc-calculator .compare-grid {
+    --table-width: 91.443452381%;
+    --category-width: 18.5516680228%;
+    --info-width: 25.8746948739%;
+    --header-category-width: 0px;
+    --header-info-width: 0px;
+    width: var(--table-width);
+}
+
+.sc-calculator .table-category {
+    width: var(--category-width);
+}
+
+.sc-calculator .table-info {
+    width: var(--info-width);
+}
+
+.sc-calculator table {
+    width: 100%;
+    text-align: left !important;
+    table-layout: auto;
+}
+
+.sc-calculator table p {
+    font-size: var(--font-size-subtitle1);
+    line-height: var(--line-height-subtitle1);
+}
+
+.sc-calculator table *:is(th, td) {
+    padding-bottom: var(--spacing-20);
+    padding-right: var(--spacing-24);
+    vertical-align: top;
+}
+
+.sc-calculator table .info .image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.9390243902;
+    margin-bottom: var(--spacing-10);
+}
+
+.sc-calculator table .info .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (min-width: 991px) {
+    .sc-calculator .table-header .swiper {
+        overflow: visible !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    .sc-calculator .table-header .swiper .swiper-wrapper {
+        transform: none !important;
+    }
+
+    .sc-calculator .table-header {
+        display: flex;
+        margin-bottom: var(--spacing-20);
+        align-items: flex-end;
+    }
+
+    .sc-calculator .table-header .category-header {
+        width: var(--header-category-width) !important;
+        padding-right: var(--spacing-24) !important;
+    }
+
+    .sc-calculator .table-header .swiper .swiper-slide.info-header {
+        width: var(--header-info-width) !important;
+        padding-right: var(--spacing-24) !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .sc-calculator .main-content .sc-inner {
+        padding-bottom: var(--spacing-50);
+    }
+
+    .sc-calculator .main-content .calculator-form .fields {
+        grid-template-columns: 1fr;
+    }
+
+    .sc-calculator .main-content .compare-grid {
+        margin-top: var(--spacing-40);
+        width: 100%;
+    }
+
+    .sc-calculator .table-header {
+        display: flex;
+        flex-direction: column;
+        grid-gap: var(--spacing-10);
+        margin-bottom: var(--spacing-20);
+    }
+
+    .sc-calculator .table-header .swiper {
+        width: 100vw !important;
+        padding: 0 var(--container-spacing-x);
+        margin: 0 calc(-1 * var(--container-spacing-x));
+        position: relative;
+    }
+
+    .sc-calculator .table-header .swiper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0) var(--container-spacing-x),
+            rgba(255, 255, 255, 0) calc(100% - var(--container-spacing-x)),
+            rgba(255, 255, 255, 0.9)
+        );
+    }
+
+    .sc-calculator .table-header .category-header {
+        text-align: center;
+    }
+    .sc-calculator table *:is(th, td) {
+        padding-right: 0;
+    }
+
+    .sc-calculator .table-header .swiper .swiper-slide.info-header {
+        width: auto !important;
+    }
+
+    .sc-calculator
+        .table-header
+        .swiper
+        .swiper-slide.info-header:not(:last-child) {
+        padding-right: var(--spacing-24);
+    }
+}

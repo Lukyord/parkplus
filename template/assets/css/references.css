@@ -1,0 +1,144 @@
+/*REFERENCES MAIN====================*/
+
+/*REFERENCES====================*/
+.references .main-content {
+    background-color: var(--color-white);
+}
+
+.references .main-content .sc-inner {
+    padding-top: var(--spacing-60);
+    padding-bottom: var(--spacing-80);
+}
+
+.references .main-content .references-dropdown {
+    position: relative;
+    width: fit-content;
+    margin-bottom: var(--spacing-20);
+}
+
+.references .main-content .references-dropdown .dropdown {
+    position: absolute;
+    top: calc(100% + var(--spacing-8));
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0.99);
+    transition: 0.2s var(--timing-function);
+    border-radius: var(--4px);
+    overflow: hidden;
+}
+
+.references .main-content .references-dropdown .dropdown.open {
+    pointer-events: auto;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.references .dropdown .tabs-panel {
+    width: 100%;
+    height: 200px;
+}
+
+.references .dropdown .tabs-panel .panel-scroll {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.references .dropdown .tabs-panel .panel-scroll .tab {
+    border-bottom: var(--border);
+    cursor: pointer;
+    transition: var(--duration) var(--timing-function);
+}
+
+.references .dropdown .tabs-panel .panel-scroll .tab:hover {
+    background-color: var(--color-gray-light);
+}
+
+.references .dropdown .tabs-panel .panel-scroll .tab:has(.tab-link.active) {
+    background-color: var(--color-gray-light);
+}
+
+.references .dropdown .tabs-panel .panel-scroll .tab .tab-link {
+    padding: var(--spacing-16);
+    display: block;
+}
+
+.references .tab-content .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.references .tab-content .content-wrapper .map {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.references .tab-content .content-wrapper .map *:is(iframe, img) {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+.references .tab-content .content-wrapper .map .pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.references .tab-content .content-wrapper .reference-gallery {
+    width: 42.5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
+    column-gap: var(--spacing-16);
+    row-gap: var(--spacing-24);
+}
+
+.references .tab-content .content-wrapper .reference-gallery .item .image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.3359375;
+    margin-bottom: var(--spacing-10);
+}
+
+.references .tab-content .content-wrapper .reference-gallery .item .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 991px) {
+    .references .main-content .sc-inner {
+        padding-top: var(--spacing-40);
+        padding-bottom: var(--spacing-64);
+    }
+
+    .references .main-content .references-dropdown,
+    .references .main-content .references-dropdown .button {
+        width: 100%;
+    }
+
+    .references .tab-content .content-wrapper {
+        flex-direction: column;
+        grid-gap: var(--spacing-24);
+    }
+
+    .references .tab-content .content-wrapper *:is(.map, .reference-gallery) {
+        width: 100%;
+    }
+
+    .references .tab-content .content-wrapper .reference-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--spacing-20);
+        row-gap: var(--spacing-16);
+    }
+}

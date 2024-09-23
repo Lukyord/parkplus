@@ -1,0 +1,279 @@
+/*SERVICES MAIN====================*/
+
+/*SERVICES HERO====================*/
+.services-hero {
+    width: 100vw;
+    height: 100svh;
+    position: relative;
+}
+
+.services-hero .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.services-hero .bg:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 24.73%, #000 75.27%);
+}
+
+.services-hero .bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.services-hero .sc-inner .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    color: var(--color-white);
+}
+
+.services-hero .wrapper .description {
+    padding-top: var(--spacing-10);
+    padding-bottom: var(--spacing-40);
+    border-bottom: 1px solid rgba(var(--color-white-rgb), 0.2);
+    text-align: center;
+}
+
+.services-hero .wrapper .icon-description {
+    display: flex;
+    grid-gap: var(--spacing-30);
+    padding-top: var(--spacing-30);
+    padding-bottom: var(--spacing-50);
+}
+
+.services-hero .wrapper .icon-description .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: var(--spacing-12);
+    max-width: min(10.6944444444vw, 153px);
+    text-align: center;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .services-hero .wrapper .icon-description {
+        padding-bottom: var(--spacing-80);
+    }
+
+    .services-hero .wrapper .icon-description .item {
+        max-width: 25.8974358974vw;
+    }
+}
+
+/*SERVICES ACCORDION SECTION====================*/
+.services-accordion-section {
+    background-color: var(--color-white);
+}
+
+.services-accordion-section .sc-inner {
+    padding-top: var(--spacing-100);
+}
+
+.services-accordion-section .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.services-accordion-section .wrapper .main-content {
+    width: 50%;
+}
+
+.services-accordion-section .wrapper .main-content .title {
+    text-wrap: nowrap;
+}
+
+.services-accordion-section .wrapper .main-content .image {
+    margin-top: var(--spacing-24);
+    margin-bottom: var(--spacing-40);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+}
+
+.services-accordion-section .wrapper .main-content .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.services-accordion-section .wrapper .accordions-side {
+    --offset-top: 0;
+    width: 40.625%;
+    padding-top: var(--offset-top);
+}
+
+@media (max-width: 991px) {
+    .services-accordion-section:nth-child(2) .sc-inner {
+        padding-top: var(--spacing-40);
+    }
+
+    .services-accordion-section .sc-inner {
+        padding-top: 0;
+    }
+
+    .services-accordion-section .wrapper {
+        flex-direction: column;
+        grid-gap: var(--spacing-40);
+    }
+
+    .services-accordion-section .wrapper .main-content {
+        width: 100%;
+    }
+
+    .services-accordion-section .wrapper .main-content .title {
+        text-wrap: wrap;
+    }
+
+    .services-accordion-section .wrapper .accordions-side {
+        width: 100%;
+        padding-top: 0;
+    }
+}
+
+/*SERVICES CENTER====================*/
+.services-center {
+    background-color: var(--color-white);
+}
+
+.services-center .sc-inner {
+    padding-top: var(--spacing-100);
+    padding-bottom: var(--spacing-60);
+}
+
+.services-center .sc-inner .title {
+    margin-bottom: var(--spacing-30);
+}
+
+.services-center .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.services-center .wrapper .locations {
+    width: 32.06845238095%;
+    display: flex;
+    flex-direction: column;
+    grid-gap: var(--spacing-40);
+}
+
+.services-center .wrapper .locations .description {
+    text-wrap: balance;
+    width: 85.3828306265%;
+}
+
+.services-center .locations .group .province {
+    margin-bottom: var(--spacing-40);
+}
+
+.services-center .locations .group .location {
+    border-bottom: var(--border);
+    margin-bottom: var(--spacing-20);
+}
+
+.services-center .locations .group .location .text {
+    padding: var(--spacing-20) 0;
+}
+
+.services-center .map {
+    width: 49.1071428571%;
+    height: fit-content;
+    position: sticky;
+    top: calc(var(--header-height) + var(--spacing-10));
+}
+
+.services-center .map .wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.services-center .map .scale {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--duration) var(--timing-function);
+}
+
+.services-center .map *:is(.scale, .image) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+}
+
+.fadeInZoom {
+    animation-name: fadeInZoom;
+    -webkit-animation-name: fadeInZoom;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@media (max-width: 991px) {
+    .services-center .sc-inner {
+        padding-bottom: var(--spacing-40);
+    }
+
+    .services-center .wrapper {
+        flex-direction: column-reverse;
+        grid-gap: var(--spacing-40);
+    }
+
+    .services-center .wrapper .locations,
+    .services-center .wrapper .locations .description,
+    .services-center .map {
+        width: 100%;
+    }
+
+    .services-center .wrapper .locations .description {
+        text-wrap: pretty;
+    }
+
+    .services-center .map {
+        position: static;
+    }
+}
