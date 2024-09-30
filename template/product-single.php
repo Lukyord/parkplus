@@ -130,7 +130,7 @@
         <div class="sc-inner">
             <div class="wrapper">
                 <div class="title">
-                    <h2 class="size-h1 animate fadeIn">OUR PROJECTS</h2>
+                    <h2 class="size-h1 animate fadeIn">OTHER PARKINGS</h2>
                 </div>
                 <div class="projects-grid">
                     <?php

@@ -744,12 +744,12 @@ jQuery(function ($) {
     // }
 
     //COUNTUP
-    // if ($(".countup").length) {
-    //   $(".countup").countUp({
-    //     delay: 150,
-    //     time: 1500,
-    //   });
-    // }
+    if ($(".countup").length) {
+        $(".countup").countUp({
+            delay: 150,
+            time: 1500,
+        });
+    }
 
     //LIMARQUEE
     // if ($('*[data-js="liMarquee"]').length) {

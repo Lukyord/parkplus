@@ -94,17 +94,21 @@
                                 array(
                                     "icon" => "ic-directions_car",
                                     "label" => "CAPACITY",
-                                    "value" => "800 CARS"
+                                    "value" => "800",
+                                    "unit" => "CARS"
                                 ),
                                 array(
                                     "icon" => "ic-engineering",
                                     "label" => "LABOR",
-                                    "value" => "> 50 PEOPLE"
+                                    "prefix" => ">",
+                                    "value" => "50",
+                                    "unit" => "PEOPLE",
                                 ),
                                 array(
                                     "icon" => "ic-paid",
                                     "label" => "CAPITAL",
-                                    "value" => "10 M"
+                                    "value" => "10",
+                                    "unit" => "M",
                                 ),
                             );
 
@@ -114,7 +118,7 @@
                                         <span><i class="ic <?php echo $item['icon']; ?> margin-right"></i></span>
                                         <p class="size-subtitle2"><?php echo $item['label']; ?></p>
                                     </div>
-                                    <p class="size-h2"><?php echo $item['value']; ?></p>
+                                    <p class="size-h2"><?php if (isset($item["prefix"]) && !empty($item["prefix"])) echo $item["prefix"]; ?> <span class="countup"><?php echo $item['value']; ?></span> <?php echo $item['unit']; ?></p>
                                 </div>
                             <?php } ?>
                         </div>
@@ -127,17 +131,20 @@
                                 array(
                                     "icon" => "ic-directions_car",
                                     "label" => "CAPACITY",
-                                    "value" => "1,200 CARS"
+                                    "value" => "1,200",
+                                    "unit" => "CARS"
                                 ),
                                 array(
                                     "icon" => "ic-engineering",
                                     "label" => "LABOR",
-                                    "value" => "10 PEOPLE"
+                                    "value" => "10",
+                                    "unit" => "PEOPLE",
                                 ),
                                 array(
                                     "icon" => "ic-paid",
                                     "label" => "CAPITAL",
-                                    "value" => "8 M"
+                                    "value" => "8",
+                                    "unit" => "M",
                                 ),
                             );
 
@@ -147,7 +154,7 @@
                                         <span><i class="ic <?php echo $item['icon']; ?> margin-right"></i></span>
                                         <p class="size-subtitle2"><?php echo $item['label']; ?></p>
                                     </div>
-                                    <p class="size-h2"><?php echo $item['value']; ?></p>
+                                    <p class="size-h2"><?php if (isset($item["prefix"]) && !empty($item["prefix"])) echo $item["prefix"]; ?> <span class="countup"><?php echo $item['value']; ?></span> <?php echo $item['unit']; ?></p>
                                 </div>
                             <?php } ?>
                         </div>
@@ -164,7 +171,7 @@
             <iframe
                 id="about-us-iframe"
                 title="about us video link"
-                src="https://www.youtube.com/embed/TPvtvIXZOiI?si=zl5ttq7rQIr1Iy63&amp;start=2"
+                src="https://www.youtube.com/embed/TPvtvIXZOiI?si=zl5ttq7rQIr1Iy63&amp;start=2&autoplay=1&mute=1&controls=0&rel=0&loop=1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
