@@ -97,15 +97,13 @@
                         foreach ($onging_arr as $item) {
                         ?>
                             <div class="swiper-slide">
-                                <a class="link-overlay" href="#outer">&nbsp;</a>
-                                <div class="content-wrapper">
+                                <div class="grid-template-item animate fadeIn">
+                                    <a class="link-overlay" href="#outer">&nbsp;</a>
                                     <div class="image blurred-media">
                                         <img src="<?php echo $item["image"] ?>" alt="<?php echo $item["name"] ?>" loading="lazy" draggable="false">>
                                     </div>
-                                    <div class="text">
-                                        <h3><?php echo $item["name"] ?></h3>
-                                        <p class="size-subtitle2 weight-semibold">(ON GOING)</p>
-                                    </div>
+                                    <h3 class="title size-subtitle1"><?php echo $item["name"] ?></h3>
+                                    <p class="date size-subtitle2 weight-semibold">(ON GOING)</p>
                                 </div>
                             </div>
                         <?php } ?>
